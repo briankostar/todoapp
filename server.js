@@ -77,6 +77,14 @@ app.delete('/api/todos/:todo_id', function(req, res) {
 	    });
     });
 
+// our application ----------------------------
+app.get('*', function(req, res){
+  //load index. angular will do the rest on front end.
+  res.sendfile('./public/index.html');
+});
+
+
+
 // listen (start app with node server.js) ======================================
 app.listen(8080);
 console.log("App listening on port 8080");
